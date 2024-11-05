@@ -1,0 +1,33 @@
+server:
+  port: 8181
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/community?useUnicode=true&characterEncoding=utf-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&useSSL=false
+    username: root
+    password: 123456
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  redis:
+    open: true
+    database: 1
+    host: 127.0.0.1
+    port: 6379
+jwt:
+  secret: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4K67DMlSPXbgG0MPp0gH
+  expire: 86400000
+  #  expire: 10000
+  subject: door
+upload:
+  face: E:/IdeaPorject/IntelligentCommunity/upload/face/
+  excel: E:/IdeaPorject/IntelligentCommunity/upload/excel/
+  urlPrefix: http://localhost:8181/
+plateocr:
+#应当有个腾讯云id和腾讯云key
+  serverIp: iai.tencentcloudapi.com
+  area: ap-guangzhou #人脸识别服务器所在区域，官方推荐就近
+  groupId: 1 #刚才创建的人脸库ID
+  used: true  #表示人脸识别是否开启
+  passPercent: 80 #通过率，相似率到达多少算通过
+  nonceStr: 123456 #随机数
